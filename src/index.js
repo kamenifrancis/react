@@ -1,17 +1,46 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+//changement de couleur 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+let like=document.getElementsByClassName('fa-regular fa-thumbs-up');
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+console.log(like,'like')
+
+for(let colors of like){
+  colors.addEventListener('click',function(){
+    if(colors.style.color === 'gray' ){
+      colors.style.color="red"
+    }else{
+      colors.style.color = "gray" 
+    }
+  }) 
+   } 
+   
+//add element 
+//compteur ajout +1 
+
+let plusBtn = document.getElementsByClassName('bttnplus');
+
+console.log(plusBtn);
+
+for (let plus of plusBtn) {
+  plus.addEventListener('click', function () {
+    plus.previousElementSibling.innerText++;
+   
+  });
+
+}
+
+
+//diminuer 
+
+let minusBtn = document.getElementsByClassName('bttnmoin');
+for(let minus of minusBtn){
+
+minus.addEventListener('click', function (){
+
+if ( minus.nextElementSibling.innerText >0 ){
+    minus.nextElementSibling.innerText--;
+}
+
+})
+
+};
